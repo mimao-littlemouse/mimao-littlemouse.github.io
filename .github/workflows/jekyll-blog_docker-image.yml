@@ -21,6 +21,11 @@ jobs:
         cd ..
         ls -ahl
         docker run -itd -v /mimao-littlemouse.github.io:/blog --name="blog" jekyll-blog /bin/bash
+        docker ps -a
+        cd mimao-littlemouse.github.io
+        ls -ahl
+        cd script
+        ls -ahl
         
     #     docker logs -f blog
     #     docker restart blog
