@@ -138,7 +138,7 @@ description: 让搭建变得方便快捷 让使用变得舒适愉快
 # 网站主机名
 # 因为该项目会部署在 github上，所以url是github项目介绍地址
 # 网站的主机名 注意：如果没有配置该选项 则默认情况下将使用site.github.url
-url: "https://mimao-littlemouse.github.io/"
+url: "https://mimao-littlemouse.github.io"
 # 全局配置 个人作者信息
 author: 
   name: liuzhiqiang

@@ -21,6 +21,9 @@ jobs:
         cd ..
         docker run -itd -v mimao-littlemouse.github.io:/blog --name="blog" mimao-blog /bin/bash
         docker restart blog
+        docker ps
+        docker ps -a
+        docker logs -f blog
 
     - name: Check GitHub Pages status
       uses: crazy-max/ghaction-github-status@v3
