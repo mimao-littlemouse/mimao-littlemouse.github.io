@@ -21,7 +21,6 @@ jobs:
         cd ..
         docker run -itd -v /mimao-littlemouse.github.io:/blog --name="blog" mimao-blog /bin/bash
         pwd
-        docker exec -it blog /bin/bash -c "pwd && ls && exit"
         docker logs -f blog
 
     - name: Check GitHub Pages status
