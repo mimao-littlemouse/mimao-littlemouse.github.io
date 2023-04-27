@@ -21,15 +21,16 @@ jobs:
         cd ..
         ls -ahl
         docker run -itd -v /mimao-littlemouse.github.io:/blog --name="blog" jekyll-blog /bin/bash
-        docker logs -f blog
+        
+    #     docker logs -f blog
     #     docker restart blog
     #     docker logs -f blog
     #     cd jekyll-blog
 
-    # - name: Check GitHub Pages status
-    #   uses: crazy-max/ghaction-github-status@v3
-    #   with:
-    #     pages_threshold: major_outage
+    # # - name: Check GitHub Pages status
+    # #   uses: crazy-max/ghaction-github-status@v3
+    # #   with:
+    # #     pages_threshold: major_outage
 
     # - name: Import GPG key
     #   uses: crazy-max/ghaction-import-gpg@v5

@@ -15,4 +15,4 @@ VOLUME [ "/blog" ]
 # EXPOSE 4000
 
 
-CMD [ "/bin/ls", "-l" ]
+CMD [ "/bin/bash", "script/build.sh" ]
