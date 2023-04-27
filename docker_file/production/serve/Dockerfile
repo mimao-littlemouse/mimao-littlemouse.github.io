@@ -15,4 +15,3 @@ VOLUME [ "/blog" ]
 EXPOSE 4000
 
 ENTRYPOINT [ "bash", "./script/serve" ]
-

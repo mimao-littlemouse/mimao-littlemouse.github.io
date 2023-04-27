@@ -7,8 +7,8 @@ COPY . /blog
 RUN bundle config set --global mirror.https://rubygems.org https://gems.ruby-china.com
 # RUN bundle add webrick
 RUN git config --global --add safe.directory /blog
-# RUN bundle lock
-# RUN bundle install
+RUN bundle lock
+RUN bundle install
 
 VOLUME [ "/blog" ]
 # 此外，在开发环境中，特意设置与生产环境下的端口不同，开发环境，使用4200端口 生产环境使用：4000端口 但构建时，不需要开启端口
