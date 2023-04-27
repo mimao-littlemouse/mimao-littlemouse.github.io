@@ -21,7 +21,6 @@ jobs:
         cd ..
         docker run -itd -v "/mimao-littlemouse.github.io":/blog --name="blog" mimao-blog /bin/bash
         docker restart blog
-        docker logs -f blog
         cd mimao-littlemouse.github.io
 
     - name: Check GitHub Pages status
