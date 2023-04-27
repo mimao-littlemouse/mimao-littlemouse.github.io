@@ -22,8 +22,6 @@ jobs:
         docker run -itd -v mimao-littlemouse.github.io:/blog --name="blog" mimao-blog /bin/bash
         sleep 15
         docker restart blog
-        pwd
-        ls -ahl
         cd mimao-littlemouse.github.io
         ls -ahl
         docker ps -a
@@ -31,6 +29,7 @@ jobs:
         ls -ahl
         sleep 10
         ls -ahl
+        docker ps -a
 
     - name: Check GitHub Pages status
       uses: crazy-max/ghaction-github-status@v3

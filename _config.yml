@@ -400,9 +400,9 @@ permalink: /:collection/:title/:year/:i_month/:i_day/:path
 # 在构建过程中使Jekyll的正常输出静音（默认：false  不静音（即：会输出日志））
 # quiet: false
 # 打印详细输出（默认：false 不详细输出）
-# verbose: false
+verbose: true
 # 是否生成Liquid渲染配置文件以帮助您识别性能瓶颈（默认：false）
-# profile: false
+profile: true
 
 
 # 配置 liquid 输出和校验规则

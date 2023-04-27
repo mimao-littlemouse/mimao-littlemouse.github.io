@@ -29,4 +29,4 @@ github_token="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"
 
 # 对于 可直接在配置文件中，进行配置的选项，推荐在配置中进行配置（便于管理配置）
 
-JEKYLL_ENV=${jekyll_env} JEKYLL_GITHUB_TOKEN=${github_token} bundle exec jekyll build --config _config.yml
+JEKYLL_ENV=${jekyll_env} JEKYLL_GITHUB_TOKEN=${github_token} bundle exec jekyll build --config _config.yml --watch --trace
