@@ -15,4 +15,4 @@ VOLUME [ "/blog" ]
 # EXPOSE 4000
 
 
-CMD [ "/bin/ls", "-hl" ]
+CMD [ "/bin/ls", "-l" ]
