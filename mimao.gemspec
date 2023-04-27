@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
 
   # spec.add_runtime_dependency "jekyll-sass-converter" "~> 1.0" # 默认插件，无需安装
 
-  spec.add_runtime_dependency "faraday-retry" "~> 2.0" 
+  spec.add_runtime_dependency "faraday-retry" 
 
   spec.add_runtime_dependency "jekyll-avatar", "~> 0.8"
 
