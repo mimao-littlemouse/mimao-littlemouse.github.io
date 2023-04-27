@@ -23,8 +23,11 @@ jobs:
     - name: Run container blog and restart container
       run: |
         cd ..
-        docker run -itd -v "/mimao-littlemouse.github.io":"/blog" --name="blog" mimao-blog /bin/bash
         pwd
+        ls /mimao-littlemouse.github.io
+        docker run -itd -v /mimao-littlemouse.github.io:/blog --name="blog" mimao-blog /bin/bash
+        pwd
+        docker restart blog
         docker logs -f blog
 
     # - name: Check GitHub Pages status
