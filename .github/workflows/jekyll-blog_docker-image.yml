@@ -19,7 +19,8 @@ jobs:
     - name: Run container blog and restart container
       run: |
         cd ..
-        docker run -it -v /jekyll-blog:/blog --name="blog" jekyll-blog /bin/bash
+        docker run -itd -v /jekyll-blog:/blog --name="blog" jekyll-blog /bin/bash
+        docker ps
         docker logs -f blog
     #     docker restart blog
     #     docker logs -f blog
