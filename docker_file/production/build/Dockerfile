@@ -6,7 +6,7 @@ COPY . /blog
 #更新gem源为：https://gems.ruby-china.com
 # RUN bundle config set --global mirror.https://rubygems.org https://gems.ruby-china.com
 # # RUN bundle add webrick
-# RUN git config --global --add safe.directory /blog
+RUN git config --global --add safe.directory /blog
 # RUN bundle lock
 # RUN bundle install
 
