@@ -81,6 +81,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap  
   - jekyll-watch 
+  - jekyll-sass-converter
   - jekyll-avatar 
   - jekyll-redirect-from 
   - jemoji 
@@ -105,6 +106,7 @@ whitelist:
   - jekyll-feed 
   - jekyll-sitemap  
   - jekyll-watch 
+  - jekyll-sass-converter
   - jekyll-avatar 
   - jekyll-redirect-from 
   - jemoji 
