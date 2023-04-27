@@ -132,13 +132,13 @@ title: Mi Mao
 # 网页 简要描述（网站的描述 都是在 页面没有定义 title的时候，即：page.title没有定义的时候显示）
 # 定义了 简要描述 title中优先显示简要描述 而不是 详细描述，但详细描述有利于 seo的搜索优化
 # 优先级：page.title tagline description
-tagline: nhao
+tagline: 方便 舒适
 # 网页 详细描述
-description: 用起来更舒适
+description: 让搭建变得方便快捷 让使用变得舒适愉快
 # 网站主机名
 # 因为该项目会部署在 github上，所以url是github项目介绍地址
 # 网站的主机名 注意：如果没有配置该选项 则默认情况下将使用site.github.url
-url: "https://github.io/mimao-littlemouse"
+url: "https://mimao-littlemouse.github.io/"
 # 全局配置 个人作者信息
 author: 
   name: liuzhiqiang
@@ -273,7 +273,7 @@ lang: en
 # jekyll-gist 配置完成，开始下一个插件配置
 
 # jekyll-github-metadata 配置
-repository: mimao-littlemouse/jekyll-blog
+repository: mimao-littlemouse/mimao-littlemouse.github.io
 # jekyll-github-metadata 配置完成，开始下一个插件配置
 
 # jekyll-optional-front-matter 配置
@@ -328,15 +328,15 @@ repository: mimao-littlemouse/jekyll-blog
 # 将服务器与终端分离（默认：false 不分离）
 # detach: false
 # 站点 监听的端口（默认：4000）
-port: 4000
+# port: 4000
 # 站点主机名（默认：localhost 即：127.0.0.1）
 # host: 127.0.0.1
 # 配置 部署之后的基础url(不包含域名或主机名的那部分 比如：https://www.github.com中后面那部分) url已在上方jekyll-seo-tag插件中配置
 # 如部署至 github仓库中 则需要配置仓库名 
 # 部署至 github个人主页中可不配置
-baseurl: "/jekyll-blog"
+# baseurl: ""
 # 显示目录列表，而不是加载索引文件（默认：false 不显示）
-show_dir_listing: true
+# show_dir_listing: false
 
 
 # 优化性能配置
@@ -419,30 +419,30 @@ permalink: /:collection/:title/:year/:i_month/:i_day/:path
 # 定义集合(即：内容合集)
 # 使用 yaml的描点和引用 来简化集合中的配置
 collection_default_option: &collection_default_option
-  permalink: /articles/:collection/:title
+  permalink: /mimao_pages/:collection/:title
   sort_by: index
   output: true
 # 声明集合的文件夹
-collections_dir: articles
+collections_dir: mimao_pages
 # 声明集合中 对应集合文件夹(在集合文件夹中以_开头的方式命名)
 # 这里无需定义label，在集合中有以文件名称 赋值的 label属性(index text的作用，在下面已注明)
 collections:
   posts:
     index: 1000
     text: 帖子
-  jekyll: 
+  home: 
     <<: *collection_default_option
     index: 0 # 右侧导航栏中的 菜单排序索引(以0开始，依次递增)
     text: jekyll # 右侧导航栏中的 菜单名称
-  python: 
+  project: 
     <<: *collection_default_option
     index: 1
-    text: python
-  github:
+    text: 项目
+  about:
     <<: *collection_default_option
-    index: -1
-    text: github
-  
+    index: 2
+    text: 关于
+
 # 为 静态文件配置一定范围内(path路径指定范围(该路径可使用正则表达式表示))的 front matter 前事项，自定义前事项 可为前事项设置默认值(比如：title layout 等等设置默认值)
 # 可使用 {{ site.static_files | where: "image", true }} 进行调用（使用where 配合 ）
 # defaults:

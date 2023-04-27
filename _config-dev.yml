@@ -132,13 +132,13 @@ title: Mi Mao
 # 网页 简要描述（网站的描述 都是在 页面没有定义 title的时候，即：page.title没有定义的时候显示）
 # 定义了 简要描述 title中优先显示简要描述 而不是 详细描述，但详细描述有利于 seo的搜索优化
 # 优先级：page.title tagline description
-tagline: nhao
+tagline: 方便 舒适
 # 网页 详细描述
-description: 用起来更舒适
+description: 让搭建变得方便快捷 让使用变得舒适愉快
 # 网站主机名
 # 因为该项目会部署在 github上，所以url是github项目介绍地址
 # 网站的主机名 注意：如果没有配置该选项 则默认情况下将使用site.github.url
-url: "https://github.io/mimao-littlemouse"
+url: "https://mimao-littlemouse.github.io"
 # 全局配置 个人作者信息
 author: 
   name: liuzhiqiang
@@ -273,7 +273,7 @@ lang: en
 # jekyll-gist 配置完成，开始下一个插件配置
 
 # jekyll-github-metadata 配置
-repository: mimao-littlemouse/jekyll-blog
+repository: mimao-littlemouse/mimao-littlemouse.github.io
 # jekyll-github-metadata 配置完成，开始下一个插件配置
 
 # jekyll-optional-front-matter 配置
