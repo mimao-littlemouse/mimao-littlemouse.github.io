@@ -152,7 +152,7 @@ author:
 #   publisher: 1234
 #   admins: 1234
 # 搜索页面 查找该网站时，在组织一栏中 会显示的图标（该图标可以是 公司的图标 也可以是个人图标）
-logo: /assets/logo.png
+# logo: /assets/logo.png
 # 指定社交信息
 social:
   # 如果用户或组织名称与站点名称不一致时，进行配置
@@ -382,7 +382,7 @@ kramdown:
   gfm_quirks: [paragraph_end,no_auto_typographic]
   # 配置表情符号
   # 允许在GFM中渲染表情符号(默认：false 不开启)
-  gfm_emojis: true
+  # gfm_emojis: true
   # 指定处理 math的引擎
   math_engine: mathjax
   # 启用 rouge高亮模式，但其外部样式还需根据 它所提供的css类名进行自定义

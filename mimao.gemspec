@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "jekyll-sitemap", "~> 1.4"
 
-  spec.add_runtime_dependency "jekyll-watch", "~> 2.0"
+  # spec.add_runtime_dependency "jekyll-watch", "~> 2.0" # 默认插件，无需安装
 
   spec.add_runtime_dependency "jekyll-avatar", "~> 0.8"
 
@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "jemoji", "~> 0.13"
 
-  spec.add_runtime_dependency "rouge", "~> 3.3"
+  # spec.add_runtime_dependency "rouge", "~> 3.3" # 默认插件，无需安装
 
   spec.add_runtime_dependency "kramdown-parser-gfm", "~> 1.1"
 
