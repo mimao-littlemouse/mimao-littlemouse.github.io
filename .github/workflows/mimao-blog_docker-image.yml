@@ -14,18 +14,14 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Build mimao-blog
-      run: |
-        pwd
-        ls -ahl
-        docker build -t mimao-blog . -f "./docker_file/production/build/Dockerfile"
-        docker images
+      run: docker build -t mimao-blog . -f "./docker_file/production/build/Dockerfile"
 
     - name: Run container blog and restart container
       run: |
         cd ..
         pwd
-        ls /mimao-littlemouse.github.io
-        docker run -itd -v /mimao-littlemouse.github.io:/blog --name="blog" mimao-blog /bin/bash
+        ls mimao-littlemouse.github.io
+        docker run -itd -v mimao-littlemouse.github.io:/blog --name="blog" mimao-blog /bin/bash
         pwd
         docker restart blog
         docker logs -f blog
