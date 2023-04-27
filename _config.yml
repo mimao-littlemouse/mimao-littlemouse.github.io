@@ -30,7 +30,7 @@ sass:
 # 处理文件或文件夹的配置
 # 禁用非白名单插件，缓存到磁盘，并忽略符号链接
 # safe 默认：false 不对插件进行禁用（但 部署到github上时，需设置为 true）
-safe: true
+# safe: false
 # 配置生成目标的文件夹(即 目录)中 不包含的文件(即 目录)或文件夹
 # 排除相对于站点源目录的文件或文件夹(即 目录)，不能是源目录之外的
 # exclude 默认值如下:["Gemfile", "Gemfile.lock", "node_modules", "vendor/bundle/", "vendor/cache/", "vendor/gems/", "vendor/ruby/"]
