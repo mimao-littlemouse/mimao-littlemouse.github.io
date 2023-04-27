@@ -15,4 +15,4 @@ VOLUME [ "/blog" ]
 # EXPOSE 4000
 
 
-CMD [ "bash", "./script/build" ]
+ENTRYPOINT [ "bash", "./script/build" ]
