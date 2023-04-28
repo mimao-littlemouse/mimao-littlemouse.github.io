@@ -22,6 +22,7 @@ jobs:
         docker run -itd -v mimao-littlemouse.github.io:/blog --name="blog" mimao-blog /bin/bash
         ls -ahl
         cd mimao-littlemouse.github.io
+        docker logs -f blog
 
     - name: Mkdir site and cp -r _site/* site and cd directory
       run: |

@@ -288,7 +288,7 @@ gist:
 # jekyll-gist 配置完成，开始下一个插件配置
 
 # jekyll-github-metadata 配置
-repository: mimao-littlemouse/mimao-littlemouse.github.io
+repository: "mimao-littlemouse/mimao-littlemouse.github.io"
 # jekyll-github-metadata 配置完成，开始下一个插件配置
 
 # jekyll-optional-front-matter 配置
