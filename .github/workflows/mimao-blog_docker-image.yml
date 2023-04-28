@@ -27,17 +27,26 @@ jobs:
     - name: watting _site folder create
       run: sleep 15
 
+    - name: restart blog
+      run: docker restart blog
+
     - name: ls if container _site
       run: ls -ahl
       
     - name: watting _site folder create
       run: sleep 15
 
+    - name: restart blog
+      run: docker restart blog
+
     - name: ls if container _site
       run: ls -ahl
 
     - name: watting _site folder create
       run: sleep 15
+      
+    - name: ls if container _site
+      run: ls -ahl
 
     - name: console log
       run: docker logs -f blog
