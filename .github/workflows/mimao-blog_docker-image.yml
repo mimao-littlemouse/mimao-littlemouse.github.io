@@ -23,6 +23,11 @@ jobs:
         ls -ahl
         cd mimao-littlemouse.github.io
         docker logs -f blog
+        docker restart blog
+        docker logs -f blog
+        sleep 15
+        docker ps -a
+        ls -ahl
 
     - name: Mkdir site and cp -r _site/* site and cd directory
       run: |
