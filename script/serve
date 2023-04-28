@@ -36,4 +36,4 @@ github_token="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"
 # 此外，在开发环境中，特意设置与生产环境下的端口不同，开发环境，使用4200端口 生产环境使用：4000端口（推荐在配置中指定）
 # 对于 可直接在配置文件中，进行配置的选项，推荐在配置中进行配置（便于管理配置）
 
-JEKYLL_ENV=${jekyll_env} JEKYLL_GITHUB_TOKEN=${github_token} bundle exec jekyll serve --livereload --open-url  --config _config.yml
+JEKYLL_ENV=${jekyll_env} JEKYLL_GITHUB_TOKEN=${github_token} bundle exec jekyll serve --livereload --config _config.yml
