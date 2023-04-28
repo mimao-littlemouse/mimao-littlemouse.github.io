@@ -26,7 +26,7 @@ jobs:
     
     - name: watting _site folder create
       run: sleep 15
-      
+
     - name: ls if container _site
       run: ls -ahl
       
@@ -38,6 +38,9 @@ jobs:
 
     - name: watting _site folder create
       run: sleep 15
+
+    - name: console log
+      run: docker logs -f blog
 
     - name: Mkdir site and cp -r _site/* site and cd directory
       run: |
