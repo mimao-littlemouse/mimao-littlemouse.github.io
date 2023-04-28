@@ -20,8 +20,22 @@ jobs:
       run: |
         cd ..
         docker run -itd -v mimao-littlemouse.github.io:/blog --name="blog" mimao-blog /bin/bash
+        ls -ahl
         cd mimao-littlemouse.github.io
+        ls -ahl
+    
+    - name: watting _site folder create
+      run: sleep 15
       
+    - name: ls if container _site
+      run: ls -ahl
+      
+    - name: watting _site folder create
+      run: sleep 15
+
+    - name: ls if container _site
+      run: ls -ahl
+
     - name: watting _site folder create
       run: sleep 15
 
