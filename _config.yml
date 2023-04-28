@@ -15,11 +15,25 @@
 # data_dir: _data
 # 代码片段 目录（默认：_includes）
 # includes_dir: _includes
-# 默认启用sass 并指定_sass目录为 sass文件存储的地址
-# 可通过 style来指定生成项目之后 style.css的 呈现方式（默认：不压缩 为展开）
+# sass部分配置：
+# 默认启用sass 并默认sass_dir指定_sass目录为 sass文件存储的地址
+# load_paths 应该搜索Sass部分的附加文件系统路径的数组。默认：[]
+# 可通过 style来指定生成项目之后 style.css的 呈现方式 compressed(压缩)、expanded（展开）（默认：展开）
+# 是否详细输出弃用信息（默认：false 只输出前5条）verbose: false
+# 如果quiet_deps选项设置为true，Sass将不会打印由依赖项引起的警告。
+# “依赖项”定义为通过sass_dir或load_path加载的任何文件。
+# 相对于入口点导入的样式表不被视为依赖项。
+# 默认为false。quiet_deps: false
+# sourcemap 可选：never（从不生成） always（总是生成） development（处于开发环境时，才生成站点地图）  默认：always
 sass:
-  sass_dir: _sass
+  # sass_dir: _sass
+  # load_paths: []
   style: compressed
+  verbose: true
+  # quiet_deps: false
+  # sourcemap: always
+
+# sass部分配置 结束
 # 配置集合（默认如下）有关集合和front matter的defaults配置 放置在该配置文件的最下方（可在文件末尾处找到）
 # collections:
 #   posts:
@@ -49,8 +63,9 @@ exclude:
 # 强制包含文件夹(即 目录)或文件
 # 默认情况下会排除点文件，如需添加.文件(以.开头的文件)
 # include 默认值如下：[".htaccess"]
-# include:
-#   - .htaccess
+include:
+  - README.md
+  - LICENSE.md
 # 保留 非Jekyll生成的文件夹或文件
 # keep_files: [".git", ".svn"]
 # 设置 文件的编码 默认：utf-8
@@ -80,9 +95,7 @@ plugins:
   - jekyll-seo-tag 
   - jekyll-feed
   - jekyll-sitemap  
-  - jekyll-watch 
-  - jekyll-sass-converter
-  - faraday-retry
+  - jekyll-watch
   - jekyll-avatar 
   - jekyll-redirect-from 
   - jemoji 
@@ -106,9 +119,7 @@ whitelist:
   - jekyll-seo-tag 
   - jekyll-feed 
   - jekyll-sitemap  
-  - jekyll-watch 
-  - jekyll-sass-converter
-  - faraday-retry
+  - jekyll-watch
   - jekyll-avatar 
   - jekyll-redirect-from 
   - jemoji 
@@ -218,13 +229,13 @@ lang: en
 # jekyll-redirect-from 配置及用法
 # 如果使用安全模式运行jekyll时，需要将该插件配置至 白名单
 # 是否禁用 输出的redirects.json文件（默认为true 不禁用）
-# redirect_from:
-#   json: true
+redirect_from:
+  json: false
 # 用法：（可以在 front matter中书写一下属性之一 或 在_config.yml中配置 front matter默认值）
 # redirect_from：相对路径（如果 设置了url baseurl 则将设置的url地址作为前缀 所以该关键字值应是 相对路径）
 # 注意：包含尾部斜杠的重定向将生成包含index.html的相应子目录，而不包含尾部斜杠则会生成不带扩展名和子目录的相应文件名
 # redirect_to: 绝对路径(比如：https://www.github.com)
-# 注意：如果将其作为模板,则在模板中可获得：page.redirect.to、page.redirect.from变量
+# 注意：如果将其作为自定义模板（在layout中自定义redirect.html）,则在模板中可获得：page.redirect.to、page.redirect.from变量，并且该自定模板将会成为自动生成时的模板
 # 用法示范：
 # redirect_from:
 #   - /post/page1/  生成index.html
@@ -259,21 +270,21 @@ lang: en
 # 可参见：https://jekyllrb.com/docs/configuration/webrick/
 # webrick 配置完成，开始下一个插件配置
 
-# github上默认启用的 不能禁用的插件
+# github上默认启用的 不会禁用的插件
 # jekyll-coffeescript 配置
 # 无需配置
 # jekyll-coffeescript 配置完成，开始下一个插件配置
 
-# jekyll-default-layout 配置
+# jekyll-default-layout 配置（将会默认进行选择）
 # 无需配置
 # jekyll-default-layout 配置完成，开始下一个插件配置
 
 # jekyll-gist 配置
-# gist:
-#   # 此信息用于为不支持JavaScript的搜索引擎和浏览器传播noscript标记
-#   # 如果 向提升网页的加载速度，将noscript设置为 false 即可
-#   # 默认：true  开启
-#   noscript: true
+gist:
+  # 此信息用于为不支持JavaScript的搜索引擎和浏览器传播noscript标记
+  # 如果 向提升网页的加载速度，将noscript设置为 false 即可
+  # 默认：true  开启
+  noscript: false
 # jekyll-gist 配置完成，开始下一个插件配置
 
 # jekyll-github-metadata 配置
@@ -284,11 +295,11 @@ repository: mimao-littlemouse/mimao-littlemouse.github.io
 # 该插件可以把不带---yaml---内容的front matter的markdown文件 标记为需要转化的markdown
 # 但如果您想要标记文件，如README、CONTRIBUTING文件、CODE_OF_CONDUCT或LICENSE，等等，你需要在 _config中的include中进行包含
 # 除此之外，默认情况下，原件也会包含在输出中（即：会出现.md .html两个同名文件）这是就需要如下配置：
-# optional_front_matter:
-#   # 是否 启用（默认：启用）
-#   enabled: true
-#   # 是否移除原件（默认：false 不移除）
-#   remove_originals: false
+optional_front_matter:
+  # 是否 启用（默认：启用）
+  enabled: true
+  # 是否移除原件（默认：false 不移除）
+  remove_originals: true
 # jekyll-optional-front-matter 配置完成，开始下一个插件配置
 
 # jekyll-paginate 配置
@@ -297,33 +308,33 @@ repository: mimao-littlemouse/mimao-littlemouse.github.io
 # jekyll-paginate 配置完成，开始下一个插件配置
 
 # jekyll-readme-index 配置
-# readme_index:
-#   # 是否 启用（默认：启用）
-#   enabled: true
-#   # 默认情况下，原始README标记文件将作为静态页面包含在输出中
-#   # 要从输出中删除它们，请将remove_originals键设置为true
-#   remove_originals: false
-#   with_frontmatter: false
+readme_index:
+  # 是否 启用（默认：启用）
+  enabled: false
+  # 默认情况下，原始README标记文件将作为静态页面包含在输出中
+  # 要从输出中删除它们，请将remove_originals键设置为true
+  remove_originals: false
+  with_frontmatter: false
 # jekyll-readme-index 配置完成，开始下一个插件配置
 
 # jekyll-titles-from-headings 配置
-# titles_from_headings:
-#   # 是否 启用（默认：启用）
-#   enabled:     true
-#   # 是否 剥离 标题（以免 渲染两次标题）
-#   strip_title: false
-#   # 将collections选项设置为true 则将推断出来的标题作为备用（因为 集合已经从文件名中推断出来了标题）
-#   collections: false
+titles_from_headings:
+  # 是否 启用（默认：启用）
+  enabled: false
+  # 是否 剥离 标题（以免 渲染两次标题）
+  strip_title: false
+  # 将collections选项设置为true 则将推断出来的标题作为备用（因为 集合已经从文件名中推断出来了标题）
+  collections: false
 # jekyll-titles-from-headings 配置完成，开始下一个插件配置
 
 # jekyll-relative-links 配置
-# relative_links:
-#   # 是否 启用（默认：启用）
-#   enabled: true
-#   # 将collections选项设置为true 将启用集合项（包括帖子）的相对链接（默认：false 不启用）
-#   collections: false
-#   # exclude 排除文件或文件夹
-#   exclude: []
+relative_links:
+  # 是否 启用（默认：启用）
+  enabled: true
+  # 将collections选项设置为true 将启用集合项（包括帖子）的相对链接（默认：false 不启用）
+  collections: true
+  # exclude 排除文件或文件夹
+  exclude: []
 # jekyll-relative-links 配置完成，开始下一个插件配置
 # github上默认启用的 不能禁用的插件 配置结束
 
@@ -406,7 +417,7 @@ permalink: /:collection/:title/:year/:i_month/:i_day/:path
 # 打印详细输出（默认：false 不详细输出）
 verbose: true
 # 是否生成Liquid渲染配置文件以帮助您识别性能瓶颈（默认：false）
-profile: true
+# profile: false
 
 
 # 配置 liquid 输出和校验规则
