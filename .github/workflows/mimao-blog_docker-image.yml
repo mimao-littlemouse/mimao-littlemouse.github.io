@@ -21,6 +21,7 @@ jobs:
         cd ..
         docker run -itd -v mimao-littlemouse.github.io:/blog --name="blog" mimao-blog /bin/bash
         cd mimao-littlemouse.github.io
+        sleep 10s
 
     - name: Mkdir site and cp -r _site/* site and cd directory
       run: |
